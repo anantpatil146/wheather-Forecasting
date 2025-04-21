@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /var/www/html
-ls -la
-cp -arp dist/. . && rm -rf dist
-service httpd restart
+echo "Running AfterInstall Hook"
+# Ensure destination exists
+mkdir -p /var/www/html
+cp -r * /var/www/html/

@@ -2,22 +2,18 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 18.20.5
-   
     commands:
-        - npm install
-       
+      - echo "Install phase - nothing to install"
+
   build:
     commands:
-        # run build script
-        - npm run build
-     
+      - echo "Build phase - listing files"
+      - ls -al
+
+  post_build:
+    commands:
+      - echo "Post-build phase completed"
+
 artifacts:
-  # include all files required to run the application
   files:
-    - dist/**/*
-    #- src/**/*
-    - package.json
-    - appspec.yml
-    - scripts/**/*
+    - '**/*'
